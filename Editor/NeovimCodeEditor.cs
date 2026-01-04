@@ -100,6 +100,7 @@ namespace Neovim.Editor
       ("alacritty", "--title \"nvimunity\" --command {app} {filePath} --listen {serverSocket}"),
       ("ptyxis", "--title \"nvimunity\" -- {app} {filePath} --listen {serverSocket}"),
       ("xterm", "-T \"nvimunity\" -e {app} {filePath} --listen {serverSocket}"),
+      ("kitty", "--title \"nvimunity\" -e {app} {filePath} --listen {serverSocket}")
     };
 #else  // UNITY_EDITOR_WIN
     {
@@ -116,6 +117,7 @@ namespace Neovim.Editor
      {
        "nvim",
        "/usr/bin/nvim",
+       "/usr/local/bin/nvim",
        "/opt/nvim-linux64/bin/nvim",
        "/opt/nvim-linux-x86_64/bin/nvim",
      };
