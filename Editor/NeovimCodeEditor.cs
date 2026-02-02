@@ -80,10 +80,10 @@ namespace Neovim.Editor
     }
     private static readonly LinuxDesktopEnvironment s_LinuxPlatform;
 #else  // UNITY_EDITOR_WIN
-    [DllImport("user32.dll")]
+    [System.Runtime.InteropServicesDllImport("user32.dll")]
     internal static extern IntPtr SetForegroundWindow(IntPtr hWnd);
 
-    [DllImport("user32.dll")]
+    [System.Runtime.InteropServicesDllImport("user32.dll")]
     internal static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 #endif
 
@@ -673,9 +673,9 @@ fi
           break;
       }
 #else  // UNITY_EDITOR_WIN
-      IntPtr windowHandle = new(Convert.ToInt64(s_Config.PrevServerProcessIntPtrStringRepr));
-      ShowWindow(windowHandle, 5);  // 5 == Activates the window and displays it in its current size and position
-      SetForegroundWindow(windowHandle);
+      //IntPtr windowHandle = new(Convert.ToInt64(s_Config.PrevServerProcessIntPtrStringRepr));
+      //ShowWindow(windowHandle, 5);  // 5 == Activates the window and displays it in its current size and position
+      //SetForegroundWindow(windowHandle);
 #endif
 
       return true;
